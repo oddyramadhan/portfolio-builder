@@ -58,23 +58,7 @@ export function DatePickerField({
           value={inputValue}
           placeholder={placeholder}
           className="pr-10"
-          onChange={(e) => {
-            const typed = e.target.value;
-            setInputValue(typed);
-
-            const parsed = new Date(typed);
-            if (isValidDate(parsed)) {
-              setDate(parsed);
-              setMonth(parsed);
-              if (onChange) onChange(parsed);
-            }
-          }}
-          onKeyDown={(e) => {
-            if (e.key === "ArrowDown") {
-              e.preventDefault();
-              setOpen(true);
-            }
-          }}
+          readOnly
         />
         <Popover open={open} onOpenChange={setOpen}>
           <PopoverTrigger asChild>
