@@ -30,7 +30,7 @@ Before running this application, make sure you have the following installed:
 ### 1. Clone the Repository
 
 ```bash
-git clone <your-repository-url>
+git clone https://github.com/oddyramadhan/portfolio-builder.git
 cd portfolio-builder
 ```
 
@@ -59,9 +59,9 @@ The frontend application will be available at: `http://localhost:3000`
 #### Terminal 2: Start the JSON Server (Port 3002)
 
 ```bash
-npm run json-server
+npm run server
 # or
-yarn json-server
+yarn server
 ```
 
 The JSON server will be available at: `http://localhost:3002`
