@@ -1,36 +1,109 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio Builder
 
-## Getting Started
+A modern, responsive portfolio builder application that allows users to create and customize their professional portfolios with ease.
 
-First, run the development server:
+## 🚀 Features
+
+- **Interactive Portfolio Creation**: Build professional portfolios with a user-friendly interface
+- **Real-time Preview**: See changes instantly as you build your portfolio
+- **Responsive Design**: Optimized for all devices and screen sizes
+- **Form Management**: Robust form handling with validation
+- **Modern UI**: Clean and professional design system
+
+## 🛠️ Tech Stack
+
+- **Frontend**: [Next.js](https://nextjs.org/) - React framework for production
+- **UI Components**: [shadcn/ui](https://ui.shadcn.com/) - Beautiful and accessible UI components
+- **Form Management**: [React Hook Form](https://react-hook-form.com/) - Performant forms with easy validation
+- **Styling**: Tailwind CSS - Utility-first CSS framework
+- **Backend**: JSON Server - Mock REST API for development
+
+## 📋 Prerequisites
+
+Before running this application, make sure you have the following installed:
+
+- [Node.js](https://nodejs.org/) (version 16.0 or higher)
+- [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
+
+## 🚀 Getting Started
+
+### 1. Clone the Repository
+
+```bash
+git clone <your-repository-url>
+cd portfolio-builder
+```
+
+### 2. Install Dependencies
+
+```bash
+npm install
+# or
+yarn install
+```
+
+### 3. Running the Application
+
+This application requires **two servers** to run simultaneously:
+
+#### Terminal 1: Start the Frontend (Port 3000)
 
 ```bash
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The frontend application will be available at: `http://localhost:3000`
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+#### Terminal 2: Start the JSON Server (Port 3002)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run json-server
+# or
+yarn json-server
+```
 
-## Learn More
+The JSON server will be available at: `http://localhost:3002`
 
-To learn more about Next.js, take a look at the following resources:
+### 4. Access the Application
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Once both servers are running, open your browser and navigate to:
+- **Main Application**: `http://localhost:3000`
+- **API Endpoint**: `http://localhost:3002`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Data Schema
 
-## Deploy on Vercel
+### Root Object
+| Field | Type | Description |
+|-------|------|-------------|
+| `profile` | Object | User profile information |
+| `portfolios` | Array | List of portfolio projects |
+| `profileImage` | String (Base64) | Base64 encoded profile image data |
+| `backgroundImage` | String (Base64) | Base64 encoded background image data |
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Profile Object
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| `name` | String | Yes | Full name of the user |
+| `position` | String | Yes | Current job title or role |
+| `description` | String | Yes | Brief professional description |
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Portfolio Object
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| `name` | String | Yes | Project name |
+| `position` | String | Yes | Role/position in the project |
+| `description` | String | Yes | Project description |
+| `company` | String | Yes | Company or organization |
+| `startDate` | String | Yes | Project start date (DD-MM-YYYY format) |
+| `endDate` | String | No | Project end date (DD-MM-YYYY format) |
+
+## 📝 Notes
+
+- Ensure **both servers** are running at the same time for the application to work properly.
+- If any port is already in use, you can change it in the project configuration or use a tool like `npx kill-port`.
+
+---
+
+**Happy coding! 🎉**
